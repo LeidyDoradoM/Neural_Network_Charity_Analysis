@@ -2,7 +2,7 @@
 
 This week's project is related with Neural Networks and how it is used in the creation of a binary classifier, capable to predict whether applicants will be successful if funded by Alphabet Soup, a non-profit foundation interested on helping organizations that protect the environment and improve people's well-being.
 
-## Pre-processing Data for a Network Model:
+## Pre-processing Data for a Network Model
 
 A dataset with information about different organizations applying for funding is used in this project. The [dataset](https://githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Resources/charity_data.csv) contains information that can be considered noise or do not have a significant impact on their successfulnes. Therefore, we need to pre-proccess the data in two ways: Excluding columns considered irrelevant for our problem, and bucketing the columns that have too many unique values and that can add errors.
 - Removed columns: **EIN** and **NAME**. 
@@ -10,15 +10,23 @@ A dataset with information about different organizations applying for funding is
 
 In addition, categorical columns are encoded (`One-hot Encoder`) and numerical values are standarized (`StandardScaler`).
 
-## Compile, Train, and Evaluate the Model:
+## Compile, Train, and Evaluate the Model
+
+Once the dataset has been processed, the Neural Network Model is designed. Figure 1 shows the structure of the model and its accuracy for the training and testing.
 
 ![model](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/NNModel.png)
 
 ![training](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/TrainAccuracy.png)
 
 ![performance](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Accuracy.png)
+Figure 1. Neural Network Model and its performance.
 
-## Optimize the Model:
+Our model has three layers, the input layer with 8 neurons, the hidden layer with 5 neurons and the ouput layer with 1 neuron, and an overall acuraccy of: 72,4%
+
+The code for this classification uses `TensorFlow` and it is in `jupyter notebook` ([here](https://github.com/LeidyDoradoM/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb))
+
+## Optimize the Model
+
 
 ### 1. Dropping off noise columns:
 
