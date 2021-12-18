@@ -12,7 +12,7 @@ In addition, categorical columns are encoded (`One-hot Encoder`) and numerical v
 
 ## Compile, Train, and Evaluate the Model
 
-Once the dataset has been processed, the Neural Network Model is designed. Figure 1 shows the structure of the model and its accuracy for the training and testing.
+Once the dataset has been processed, the Neural Network Model is designed. Figure 1 shows the structure of the model and its accuracy for the training and testing. 50 epochs were run for the training of the model.
 
 ![model](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/NNModel.png)
 
@@ -23,34 +23,47 @@ Figure 1. Neural Network Model and its performance.
 
 Our model has three layers, the input layer with 8 neurons, the hidden layer with 5 neurons and the ouput layer with 1 neuron, and an overall acuraccy of: 72,4%
 
-The code for this classification uses `TensorFlow` and it is in `jupyter notebook` ([here](https://github.com/LeidyDoradoM/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb))
+The code for this classification uses `TensorFlow` as the machine learning library and it is written in `jupyter notebook` (code is [here](https://github.com/LeidyDoradoM/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb))
 
 ## Optimize the Model
 
+We want to optimize the initial model and try to improve its performance to at least 75%. We try three different approaches in order to get some improvement in its accuracy.
 
 ### 1. Dropping off noise columns:
+
+The first approach considers to drop some additional columns that we think can be considered irrelevant for our classification problem. Thus, **ASK_AMT** and **SPECIAL_CONSIDERATIONS** are removed, as it is shown in figure 2. The overall performance of this optimized model is slightly improved to 72,8%. 
 
 ![Opt1](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Optimazation1.png)
 
 ![training1](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/TrainAccuracy_Opt1.png)
 
 ![performance1](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Accuracy_Opt1.png)
+Figure 2. First approach to optimize the Neural Network Classifier and its performance.
 
 ### 2. Changing Model's Parameters:
+
+In the second approach for optimizing our model, it is considered an additional hidden layer of neurons and additional neurons for each layer.  Figure 3 shows this changes in the structure of the model and its performance.
 
 ![Opt2](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Model_Opt2.png)
 
 ![training2](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/TrainAccuracy_Opt2.png)
 
 ![performance2](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Accuracy_Opt2.png)
+Figure 3. Optimized Neural Network Model and its performance.
+
+In this case, the overall performance is practically the same as the initial model.
 
 ### 3. Increasing training Epochs:
 
-
+For the thir intend to optimize the performance of our Neural Network model, we double the number of epochs in the training process. Figure 4 shows the performance for the training and testing.
 
 ![training3](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/TrainAccuracy_Opt3.png)
 
 ![performance3](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Accuracy_Opt3.png)
+Figure 4. Performance of the optimized model with 100 epochs of training.
+
+Unfortunately, the perormance of 72,6% does not improve the initial performance of our model, and consequently, neither reaches the goal of 75% of accuracy.
+
 ## Summary
 
 
