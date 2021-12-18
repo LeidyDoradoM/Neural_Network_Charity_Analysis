@@ -5,6 +5,9 @@ This week's project is related with Neural Networks and how it is used in the cr
 ## Pre-processing Data for a Network Model
 
 A dataset with information about different organizations applying for funding is used in this project. The [dataset](https://githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Resources/charity_data.csv) contains information that can be considered noise or do not have a significant impact on their successfulnes. Therefore, we need to pre-proccess the data in two ways: Excluding columns considered irrelevant for our problem, and bucketing the columns that have too many unique values and that can add errors.
+
+- Target column/feature: **IS_SUCCESSFUL**
+- Features columns: **APPLICATION_TYPE**, **AFFILIATION**, **CLASSIFICATION**, **USE_CASE**, **ORGANIZATION**, **INCOME_AMT**, and **ASK_AMT**
 - Removed columns: **EIN** and **NAME**. 
 - Bucket columns: **APPLICATION TYPE** and **CLASSIFICATION**.
 
@@ -21,13 +24,16 @@ Once the dataset has been processed, the Neural Network Model is designed. Figur
 ![performance](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Accuracy.png)
 Figure 1. Neural Network Model and its performance.
 
-Our model has three layers, the input layer with 8 neurons, the hidden layer with 5 neurons and the ouput layer with 1 neuron, and an overall acuraccy of: 72,4%
+Our model has three layers: 
+- The input layer with 8 neurons, and *RELU* as activation function.
+- The hidden layer with 5 neurons and again *RELU* as activation function.
+- The ouput layer with 1 neuron and *Sigmoid* as activation function.
 
-The code for this classification uses `TensorFlow` as the machine learning library and it is written in `jupyter notebook` (code is [here](https://github.com/LeidyDoradoM/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb))
+And an overall acuraccy of: 72,4%.  The code for this classification uses `TensorFlow` as the machine learning library and it is written in `jupyter notebook` (code is [here](https://github.com/LeidyDoradoM/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb))
 
 ## Optimize the Model
 
-We want to optimize the initial model and try to improve its performance to at least 75%. We try three different approaches in order to get some improvement in its accuracy.
+To optimize the initial model and try to improve its performance to at least 75%.  Three different approaches are considered to get some improvement in its accuracy.
 
 ### 1. Dropping off noise columns:
 
@@ -55,7 +61,7 @@ In this case, the overall performance is practically the same as the initial mod
 
 ### 3. Increasing training Epochs:
 
-For the thir intend to optimize the performance of our Neural Network model, we double the number of epochs in the training process. Figure 4 shows the performance for the training and testing.
+For the third intend to optimize the performance of our Neural Network model, we double the number of epochs in the training process. Figure 4 shows the performance for the training and testing.
 
 ![training3](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/TrainAccuracy_Opt3.png)
 
@@ -65,5 +71,8 @@ Figure 4. Performance of the optimized model with 100 epochs of training.
 Unfortunately, the perormance of 72,6% does not improve the initial performance of our model, and consequently, neither reaches the goal of 75% of accuracy.
 
 ## Summary
+
+A neural network classifier is designed, trained and tested here. In addition, three different ways to optimize the model were considered. Even with all the considered changes of removal of features, addition of layers and neurons in the model, and increasing of number of fitting epochs, the accuracy remains the same (~72%).  Since different changes in the model were considered, and they did not work as expected, a recomendation of using another kind of classification model is given. For example, a Random Forest has a similar accuracy performance than Deep Learning models but its interpretability is much higher.
+
 
 
