@@ -24,12 +24,12 @@ Once the dataset has been processed, the Neural Network Model is designed. Figur
 ![performance](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Accuracy.png)
 Figure 1. Neural Network Model and its performance.
 
-Our model has three layers: 
+The model has three layers: 
 - The input layer with 8 neurons, and *RELU* as activation function.
 - The hidden layer with 5 neurons and again *RELU* as activation function.
 - The ouput layer with 1 neuron and *Sigmoid* as activation function.
 
-And an overall acuraccy of: 72,4%.  The code for this classification uses `TensorFlow` as the machine learning library and it is written in `jupyter notebook` (code is [here](https://github.com/LeidyDoradoM/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb))
+And an overall acuraccy of: 72.4%.  The code for this classification uses `TensorFlow` as the machine learning library and it is written in `jupyter notebook` (code is [here](https://github.com/LeidyDoradoM/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity.ipynb))
 
 ## Optimize the Model
 
@@ -37,7 +37,7 @@ To optimize the initial model and try to improve its performance to at least 75%
 
 ### 1. Dropping off noise columns:
 
-The first approach considers to drop some additional columns that we think can be considered irrelevant for our classification problem. Thus, **ASK_AMT** and **SPECIAL_CONSIDERATIONS** are removed, as it is shown in figure 2. The overall performance of this optimized model is slightly improved to 72,8%. 
+The first approach considers to drop some additional columns that can be considered irrelevant for the classification problem. Thus, **ASK_AMT** and **SPECIAL_CONSIDERATIONS** are removed, as it is shown in figure 2. The overall performance of this optimized model is slightly improved to 72.8%. 
 
 ![Opt1](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Optimazation1.png)
 
@@ -48,7 +48,7 @@ Figure 2. First approach to optimize the Neural Network Classifier and its perfo
 
 ### 2. Changing Model's Parameters:
 
-In the second approach for optimizing our model, it is considered an additional hidden layer of neurons and additional neurons for each layer.  Figure 3 shows this changes in the structure of the model and its performance.
+In the second approach, it is considered an additional hidden layer of neurons and additional neurons for each layer.  Figure 3 shows these changes in the structure of the model and its performance.
 
 ![Opt2](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Model_Opt2.png)
 
@@ -61,18 +61,15 @@ In this case, the overall performance is practically the same as the initial mod
 
 ### 3. Increasing training Epochs:
 
-For the third intend to optimize the performance of our Neural Network model, we double the number of epochs in the training process. Figure 4 shows the performance for the training and testing.
+For the third intend to optimize the performance of the Neural Network model, the number of epochs in the training process is doubled. Figure 4 shows the performance for the training and testing.
 
 ![training3](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/TrainAccuracy_Opt3.png)
 
 ![performance3](https://raw.githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Images/Accuracy_Opt3.png)
 Figure 4. Performance of the optimized model with 100 epochs of training.
 
-Unfortunately, the perormance of 72,6% does not improve the initial performance of our model, and consequently, neither reaches the goal of 75% of accuracy.
+Unfortunately, the performance of 72.6% does not improve the initial performance and consequently, the goal of 75% of accuracy is not reached.
 
 ## Summary
 
-A neural network classifier is designed, trained and tested here. In addition, three different ways to optimize the model were considered. Even with all the considered changes of removal of features, addition of layers and neurons in the model, and increasing of number of fitting epochs, the accuracy remains the same (~72%).  Since different changes in the model were considered, and they did not work as expected, a recomendation of using another kind of classification model is given. For example, a Random Forest has a similar accuracy performance than Deep Learning models but its interpretability is much higher.
-
-
-
+A neural network classifier is designed, trained and tested. And in order to improve its performance, three different ways to optimize the model were considered. Even with all the considered changes of removal of features, addition of layers and neurons in the model, and increasing of number of fitting epochs, the accuracy remains the same (~72%).  Since different changes in the model were considered, and they did not work as expected, it could be recomended to work with another kind of classification model, i.e., a Random Forest classifier that has a similar accuracy performance than Deep Learning models but that it is much easier to interpretate.
