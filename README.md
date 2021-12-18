@@ -4,7 +4,11 @@ This week's project is related with Neural Networks and how it is used in the cr
 
 ## Pre-processing Data for a Network Model:
 
+A dataset with information about different organizations applying for funding is used in this project. The [dataset](https://githubusercontent.com/LeidyDoradoM/Neural_Network_Charity_Analysis/main/Resources/charity_data.csv) contains information that can be considered noise or do not have a significant impact on their successfulnes. Therefore, we need to pre-proccess the data in two ways: Excluding columns considered irrelevant for our problem, and bucketing the columns that have too many unique values and that can add errors.
+- Removed columns: **EIN** and **NAME**. 
+- Bucket columns: **APPLICATION TYPE** and **CLASSIFICATION**.
 
+In addition, categorical columns are encoded (`One-hot Encoder`) and numerical values are standarized (`StandardScaler`).
 
 ## Compile, Train, and Evaluate the Model:
 
